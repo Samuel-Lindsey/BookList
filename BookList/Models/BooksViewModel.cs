@@ -15,6 +15,7 @@ namespace BookList.Models
 
         [DisplayName("Author")]
         public string Author { get; set; }
-
+        public object Books { get; internal set; }
+        public object TotalBooks { get; internal set; }
     }
 }
