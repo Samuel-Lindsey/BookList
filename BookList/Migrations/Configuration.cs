@@ -29,7 +29,13 @@ namespace BookList.Migrations
                   new Books { BookId = 5, Title = "Happy", Author = "MeeToo"}
 
                 );
-            
+
+            context.Readers.AddOrUpdate(
+                  b => b.ReaderId,
+                  new Reader { ReaderId = 1, Name = "Silas"},
+                  new Reader { ReaderId = 2, Name = "Leon"}
+                );
+
         }
     }
 }

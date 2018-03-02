@@ -115,6 +115,7 @@
     <Compile Include="BooksListContext.cs" />
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReaderController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -122,10 +123,17 @@
     <Compile Include="Migrations\201802282221469_InitialMigration.Designer.cs">
       <DependentUpon>201802282221469_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803012358180_ReadersMigration.cs" />
+    <Compile Include="Migrations\201803012358180_ReadersMigration.Designer.cs">
+      <DependentUpon>201803012358180_ReadersMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Books.cs" />
     <Compile Include="Models\BooksListViewModel.cs" />
     <Compile Include="Models\BooksViewModel.cs" />
+    <Compile Include="Models\Reader.cs" />
+    <Compile Include="Models\ReaderListViewModel.cs" />
+    <Compile Include="Models\ReaderViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -138,6 +146,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Books\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -147,11 +156,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Books\" />
+    <Folder Include="Views\Reader\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201802282221469_InitialMigration.resx">
       <DependentUpon>201802282221469_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803012358180_ReadersMigration.resx">
+      <DependentUpon>201803012358180_ReadersMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

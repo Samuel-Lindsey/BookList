@@ -11,6 +11,7 @@ namespace BookList
         public BooksListContext() : base("name=BookList") { }
         
         public virtual DbSet<Books> Books { get; set; } 
+        public virtual DbSet<Reader> Readers { get; set; }
         
 
         

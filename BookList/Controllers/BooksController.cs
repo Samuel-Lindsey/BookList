@@ -8,24 +8,26 @@ using System.Web.Mvc;
 namespace BookList.Controllers
 {
     public class BooksController : Controller
-    public ActionResult Index()
     {
-        using (var booksListContext = new BooksListContext())
+        public ActionResult Index()
         {
-            var booksList = new BooksViewModel
+            using (var booksListContext = new BooksListContext())
             {
-                //Convert each Book to a BooksViewModel
-                Books = booksListContext.Books.Select(b => new BooksViewModel
+                var booksList = new BooksViewModel
                 {
-                    BookId = b.BookId,
-                    Title = b.Title,
-                    Author = b.Author
-                }).ToList()
-            };
+                    //Convert each Book to a BooksViewModel
+                    Books = booksListContext.Books.Select(b => new BooksViewModel
+                    {
+                        BookId = b.BookId,
+                        Title = b.Title,
+                        Author = b.Author
+                    }).ToList()
+                };
 
-            booksList.TotalBooks = booksList.Books.Count;
+                
 
-            return View(personList);
+                return View(booksList);
+            }
         }
     }
 }
