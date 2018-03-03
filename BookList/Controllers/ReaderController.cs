@@ -13,9 +13,9 @@ namespace BookList.Controllers
         {
             using (var readerListContext = new BooksListContext())
             {
-                var readerList = new ReaderViewModel
+                var readerList = new ReaderListViewModel
                 {
-                    //Convert each Book to a BooksViewModel
+                    //Convert each Reader to a ReadersViewModel
                     Readers = readerListContext.Readers.Select(r => new ReaderViewModel
                     {
                         ReaderId = r.ReaderId,

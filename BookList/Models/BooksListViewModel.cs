@@ -7,7 +7,7 @@ namespace BookList.Models
 {
     public class BooksListViewModel
     {
-        public List<BooksViewModel> Books { get; set; }
+        public List <BooksViewModel> Books { get; set; }
         public int TotalBooks { get; set; }
     }
 }

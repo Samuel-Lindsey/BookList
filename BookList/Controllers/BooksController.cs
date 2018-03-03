@@ -13,7 +13,7 @@ namespace BookList.Controllers
         {
             using (var booksListContext = new BooksListContext())
             {
-                var booksList = new BooksViewModel
+                var booksList = new BooksListViewModel
                 {
                     //Convert each Book to a BooksViewModel
                     Books = booksListContext.Books.Select(b => new BooksViewModel
@@ -25,7 +25,7 @@ namespace BookList.Controllers
                 };
 
                 
-
+         
                 return View(booksList);
             }
         }

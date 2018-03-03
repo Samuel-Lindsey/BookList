@@ -12,6 +12,6 @@ namespace BookList.Models
 
         [DisplayName("Name")]
         public string Name { get; set; }
-        public object Readers { get; internal set; }
+       
     }
 }

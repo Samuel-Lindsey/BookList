@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Readers";
+}
+
+<h2>Index</h2>
+
+<ul>
+    @for (var i = 0; i < Model.Readers.Count; i++)
+    {
+        <li> @Model.Readers[i].Name </li>
+    }
+
+</ul>
