@@ -29,5 +29,31 @@ namespace BookList.Controllers
                 return View(booksList);
             }
         }
+
+        public ActionResult BooksAdd()
+        {
+            var booksViewModel = new BooksViewModel();
+
+            return View("AddEditBook", booksViewModel);
+        }
+
+        [HttpPost]
+        public ActionResult AddBooks(BooksViewModel booksViewModel)
+        {
+            using (var booksListContext = new BooksListContext())
+            {
+                var books = new Books
+                {
+                    Title = booksViewModel.Title,
+                    Author = booksViewModel.Author
+                };
+
+                booksListContext.Books.Add(books);
+                booksListContext.SaveChanges();
+            }
+
+            return RedirectToAction("Index");
+        }
+
     }
 }
