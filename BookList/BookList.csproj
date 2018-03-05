@@ -130,6 +130,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Books.cs" />
     <Compile Include="Models\BooksListViewModel.cs" />
+    <Compile Include="Models\BooksRead.cs" />
     <Compile Include="Models\BooksViewModel.cs" />
     <Compile Include="Models\Reader.cs" />
     <Compile Include="Models\ReaderListViewModel.cs" />

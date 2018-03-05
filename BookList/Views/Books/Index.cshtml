@@ -15,12 +15,36 @@
     <tbody>
         @for (var i = 0; i < Model.Books.Count; i++)
         {
-        <tr>
-            <td>@(Model.Books[i].Title + " By " + Model.Books[i].Author)</td>
+          <tr>
+            <td>
+                @(Model.Books[i].Title + " By " + Model.Books[i].Author)
+                        @Html.ActionLink("Edit", "BooksEdit", new { id = Model.Books[i].BookId })
 
-            
-        </tr>
-        }
+                        <a data-toggle="modal" href="@("#deleteBookModal" + i)">Delete</a>
+                        <div class="modal fade" id="@("deleteBookModal" + i)" tabindex="-1" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    @using (Html.BeginForm("DeleteBooks", "Books"))
+                                     {
+                                        <input type="hidden" value="@Model.Books[i].BookId" name="BookId" />
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Delete @Model.Books[i].Title</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure you want to delete @Model.Books[i].Title?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary">Yes</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                        </div>
+                                     }
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+         }
     </tbody>
 </table>
 

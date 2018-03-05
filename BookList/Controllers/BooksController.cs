@@ -54,6 +54,65 @@ namespace BookList.Controllers
 
             return RedirectToAction("Index");
         }
+        public ActionResult BooksEdit(int id)
+        {
+            using (var booksListContext = new BooksListContext())
+            {
+                var books = booksListContext.Books.SingleOrDefault(b => b.BookId == id);
+                if (books != null)
+                {
+                    var booksViewModel = new BooksViewModel
+                    {
+                        BookId = books.BookId,
+                        Title = books.Title,
+                        Author = books.Author
+                    };
+
+                    return View("AddEditBook", booksViewModel);
+                }
+            }
+
+            return new HttpNotFoundResult();
+        }
+
+        [HttpPost]
+        public ActionResult EditBooks(BooksViewModel booksViewModel)
+        {
+            using (var booksListContext = new BooksListContext())
+            {
+                var books = booksListContext.Books.SingleOrDefault(b => b.BookId == booksViewModel.BookId);
+
+                if (books != null)
+                {
+                    books.Title = booksViewModel.Title;
+                    books.Author = booksViewModel.Author;
+                    booksListContext.SaveChanges();
+
+                    return RedirectToAction("Index");
+                }
+            }
+
+            return new HttpNotFoundResult();
+        }
+
+        [HttpPost]
+        public ActionResult DeleteBooks(BooksViewModel booksViewModel)
+        {
+            using (var booksListContext = new BooksListContext())
+            {
+                var books = booksListContext.Books.SingleOrDefault(b => b.BookId == booksViewModel.BookId);
+
+                if (books != null)
+                {
+                    booksListContext.Books.Remove(books);
+                    booksListContext.SaveChanges();
+
+                    return RedirectToAction("Index");
+                }
+            }
+
+            return new HttpNotFoundResult();
+        }
 
     }
 }
