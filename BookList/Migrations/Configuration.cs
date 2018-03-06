@@ -36,6 +36,14 @@ namespace BookList.Migrations
                   new Reader { ReaderId = 2, Name = "Leon"}
                 );
 
+            context.BooksRead.AddOrUpdate(
+                  b => b.BRId,
+                  new BooksRead { ReaderId = 1, BookId = 3, Star = 4  },
+                  new BooksRead { ReaderId = 2, BookId = 4, Star = 3 },
+                  new BooksRead { ReaderId = 1, BookId = 1, Star = 4 },
+                  new BooksRead { ReaderId = 2, BookId = 2, Star = 5}
+                );
+
         }
     }
 }

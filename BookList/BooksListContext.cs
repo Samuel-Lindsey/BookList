@@ -16,6 +16,7 @@ namespace BookList
         
         public virtual DbSet<Books> Books { get; set; } 
         public virtual DbSet<Reader> Readers { get; set; }
+        public virtual DbSet<BooksRead> BooksRead { get; set; }
         
 
         

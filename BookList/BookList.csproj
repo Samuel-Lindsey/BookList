@@ -114,6 +114,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="BooksListContext.cs" />
     <Compile Include="Controllers\BooksController.cs" />
+    <Compile Include="Controllers\BooksReadController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ReaderController.cs" />
     <Compile Include="Global.asax.cs">
@@ -127,11 +128,17 @@
     <Compile Include="Migrations\201803012358180_ReadersMigration.Designer.cs">
       <DependentUpon>201803012358180_ReadersMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803060152580_BooksReadMigration.cs" />
+    <Compile Include="Migrations\201803060152580_BooksReadMigration.Designer.cs">
+      <DependentUpon>201803060152580_BooksReadMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Books.cs" />
     <Compile Include="Models\BooksListViewModel.cs" />
     <Compile Include="Models\BooksRead.cs" />
     <Compile Include="Models\BooksViewModel.cs" />
+    <Compile Include="Models\BRListViewModel.cs" />
+    <Compile Include="Models\BRViewModel.cs" />
     <Compile Include="Models\Reader.cs" />
     <Compile Include="Models\ReaderListViewModel.cs" />
     <Compile Include="Models\ReaderViewModel.cs" />
@@ -159,6 +166,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\BooksRead\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201802282221469_InitialMigration.resx">
@@ -166,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803012358180_ReadersMigration.resx">
       <DependentUpon>201803012358180_ReadersMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803060152580_BooksReadMigration.resx">
+      <DependentUpon>201803060152580_BooksReadMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
