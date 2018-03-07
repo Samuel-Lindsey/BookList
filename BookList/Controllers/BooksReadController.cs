@@ -42,34 +42,43 @@ namespace BookList.Controllers
             }
         }
 
-        public ActionResult ReadersBookList(int id)
+        public ActionResult ReadersBookList(int readerId)
         {
+            var returnBookList = new BRListViewModel();
             using (var booksListContext = new BooksListContext())
             {
-                var booksRead = booksListContext.BooksRead.SingleOrDefault(p => p.BRId == id);
+                var booksRead = booksListContext.BooksRead.Where(p => p.ReaderId == readerId).ToList();
                 if (booksRead != null)
                 {
-                    var brViewModel = new BRViewModel
+                    foreach (var bookread in booksRead)
                     {
-                        BRId = booksRead.BRId,
-
-                        Books = new BooksViewModel
+                        var brViewModel = new BRViewModel
                         {
-                            BookId = booksRead.BookId,
-                            Title = booksRead.Books.Title,
-                            Author = booksRead.Books.Author
-                        },
+                            BRId = bookread.BRId,
 
-                        Readers = new ReaderViewModel
-                        {
-                            ReaderId = booksRead.Reader.ReaderId,
-                            Name = booksRead.Reader.Name
-                        }
+                            Books = new BooksViewModel
+                            {
+                                BookId = bookread.BookId,
+                                Title = bookread.Books.Title,
+                                Author = bookread.Books.Author
+                            },
+
+                            Readers = new ReaderViewModel
+                            {
+                                ReaderId = bookread.Reader.ReaderId,
+                                Name = bookread.Reader.Name
+                            }
 
 
-                    };
+                        };
+                        returnBookList.BooksRead.Add(brViewModel);
+                      
+                    }
 
-                    return View(brViewModel);
+                    return View(returnBookList);
+
+
+
                 }
             }
 

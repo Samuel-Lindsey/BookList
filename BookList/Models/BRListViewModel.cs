@@ -6,7 +6,12 @@ using System.Web;
 namespace BookList.Models
 {
     public class BRListViewModel
+ 
     {
+        public BRListViewModel()
+        {
+            BooksRead = new List<BRViewModel>();
+        }
         public List<BRViewModel> BooksRead { get; set; }
         
     }

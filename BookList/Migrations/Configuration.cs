@@ -38,10 +38,10 @@ namespace BookList.Migrations
 
             context.BooksRead.AddOrUpdate(
                   b => b.BRId,
-                  new BooksRead { ReaderId = 1, BookId = 3, Star = 4  },
-                  new BooksRead { ReaderId = 2, BookId = 4, Star = 3 },
-                  new BooksRead { ReaderId = 1, BookId = 1, Star = 4 },
-                  new BooksRead { ReaderId = 2, BookId = 2, Star = 5}
+                  new BooksRead { BRId = 1, ReaderId = 1, BookId = 3, Star = 4  },
+                  new BooksRead { BRId = 2, ReaderId = 2, BookId = 4, Star = 3 },
+                  new BooksRead { BRId = 3, ReaderId = 1, BookId = 1, Star = 4 },
+                  new BooksRead { BRId = 4, ReaderId = 2, BookId = 2, Star = 5}
                 );
 
         }
