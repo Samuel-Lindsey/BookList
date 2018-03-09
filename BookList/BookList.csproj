@@ -157,6 +157,7 @@
     <Content Include="Views\Books\Index.cshtml" />
     <Content Include="Views\Reader\Index.cshtml" />
     <Content Include="Views\Books\AddEditBook.cshtml" />
+    <Content Include="Views\BooksRead\ReadersBookList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -166,7 +167,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\BooksRead\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201802282221469_InitialMigration.resx">
