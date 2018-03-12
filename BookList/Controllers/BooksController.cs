@@ -48,11 +48,17 @@ namespace BookList.Controllers
                     Author = booksViewModel.Author
                 };
 
+
                 booksListContext.Books.Add(books);
                 booksListContext.SaveChanges();
+
+
+
+
             }
 
             return RedirectToAction("Index");
+
         }
         public ActionResult BooksEdit(int id)
         {
@@ -113,6 +119,7 @@ namespace BookList.Controllers
 
             return new HttpNotFoundResult();
         }
+        
 
     }
 }

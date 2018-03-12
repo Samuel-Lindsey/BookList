@@ -84,5 +84,41 @@ namespace BookList.Controllers
 
             return new HttpNotFoundResult();
         }
+
+        public ActionResult ReadBooksAdd()
+        {
+            using (var booksListContext = new BooksListContext())
+            {
+                ViewBag.BooksRead = booksListContext.Books.Select(c => new SelectListItem
+                {
+                    Value = c.BookId.ToString(),
+                    Text = c.Title
+                }).ToList();
+            }
+
+            var brViewModel = new BRViewModel();
+
+            return View("AddEditBooksRead", brViewModel);
+        }
+
+        [HttpPost]
+        public ActionResult AddReadBooks (BRViewModel brViewModel)
+        {
+            using (var booksListContext = new BooksListContext())
+            {
+                var bookRead = new BooksRead
+                {
+                    ReaderId = brViewModel.Readers.ReaderId.Value,
+                    BookId = brViewModel.Books.BookId.Value
+                };
+
+                booksListContext.BooksRead.Add(bookRead);
+                booksListContext.SaveChanges();
+            }
+
+            return RedirectToAction("Index");
+        }
+        
+
     }
 }

@@ -17,7 +17,7 @@
         {
           <tr>
             <td>
-                @(Model.Books[i].Title + " By " + Model.Books[i].Author)
+                @(Model.Books[i].Title + ": By " + Model.Books[i].Author)
                         @Html.ActionLink("Edit", "BooksEdit", new { id = Model.Books[i].BookId })
 
                         <a data-toggle="modal" href="@("#deleteBookModal" + i)">Delete</a>

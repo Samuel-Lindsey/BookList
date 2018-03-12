@@ -3,9 +3,36 @@
     ViewBag.Title = "ReadersBookList";
 }
 
-<h2>ReadersBookList</h2>
+<h2>@(Model.BooksRead[0].Readers.Name)</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (var i = 0; i < Model.BooksRead.Count; i++)
+        {
+            <tr>
+                <td>
+                    @(Model.BooksRead[i].Books.Title + ": By " + Model.BooksRead[i].Books.Author)
+
+                    
+
+                   
+
+            
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="col-sm-12">
+    @Html.ActionLink("Add Book", "ReadBooksAdd", null, new { @class = "btn btn-primary" })
+</div>
 
 
-      
 
 

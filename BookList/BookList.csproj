@@ -158,6 +158,7 @@
     <Content Include="Views\Reader\Index.cshtml" />
     <Content Include="Views\Books\AddEditBook.cshtml" />
     <Content Include="Views\BooksRead\ReadersBookList.cshtml" />
+    <Content Include="Views\BooksRead\AddEditBooksRead.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
