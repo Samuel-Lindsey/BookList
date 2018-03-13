@@ -30,7 +30,8 @@
     </tbody>
 </table>
 <div class="col-sm-12">
-    @Html.ActionLink("Add Book", "ReadBooksAdd", null, new { @class = "btn btn-primary" })
+   @Html.ActionLink("Add Book", "ReadBooksAdd", new { ReaderId = Model.ReaderId }, new { @class = "btn btn-primary" })
+    
 </div>
 
 

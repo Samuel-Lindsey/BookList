@@ -9,7 +9,7 @@
     @for (var i = 0; i < Model.Readers.Count; i++)
     {
         <li> @Model.Readers[i].Name
-             @Html.ActionLink("Books Read", "ReadersBookList", "BooksRead", new { readerId = Model.Readers[i].ReaderId }, null)
+             @Html.ActionLink("Books Read", "ReadersBookList", "BooksRead", new { Id = Model.Readers[i].ReaderId }, null)
              </li>
     }
 

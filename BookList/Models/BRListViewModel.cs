@@ -13,6 +13,6 @@ namespace BookList.Models
             BooksRead = new List<BRViewModel>();
         }
         public List<BRViewModel> BooksRead { get; set; }
-        
+        public int ReaderId { get; set; }
     }
 }

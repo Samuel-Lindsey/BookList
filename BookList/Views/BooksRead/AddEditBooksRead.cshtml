@@ -3,20 +3,21 @@
     ViewBag.Title = "AddBooksRead";
 }
 
-<h2>Add them Books</h2>
+<h2>@Model.Readers.ReaderId</h2>
 
 
 <div class="row">
     <div class="col-sm-6 col-xs-10">
         @using (Html.BeginForm("AddReadBooks", "BooksRead"))
-        {
-            
-            <div class="form-group">
-                <label for="Books_BookId">Book Read</label>
-                @Html.DropDownListFor(m => m.Books.BookId, ViewBag.BooksRead as IEnumerable<SelectListItem>, new { @class = "form-control" })
-            </div>
-            <button type="submit" class="btn btn-primary">@("Add")</button>
-            @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default" })
-        }
+    {
+        @Html.HiddenFor(m => m.Readers.ReaderId)
+        <div class="form-group">
+            <label for="Books_BookId">Book Read</label>
+            @Html.DropDownListFor(m => m.Books.BookId, ViewBag.BooksRead as IEnumerable<SelectListItem>, new { @class = "form-control" })
+        </div>
+        <button type="submit" class="btn btn-primary">@("Add")</button>
+        @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default" })
+       
+}
     </div>
 </div>

@@ -9,7 +9,7 @@ namespace BookList.Controllers
 {
     public class BooksReadController : Controller
     {
-        public ActionResult Index()
+      /*  public ActionResult Index()
         {
             using (var booksListContext = new BooksListContext())
             {
@@ -41,13 +41,14 @@ namespace BookList.Controllers
                 return View(brList);
             }
         }
-
-        public ActionResult ReadersBookList(int readerId)
+*/
+        public ActionResult ReadersBookList(int Id)
         {
             var returnBookList = new BRListViewModel();
+            returnBookList.ReaderId = Id;
             using (var booksListContext = new BooksListContext())
             {
-                var booksRead = booksListContext.BooksRead.Where(p => p.ReaderId == readerId).ToList();
+                var booksRead = booksListContext.BooksRead.Where(p => p.ReaderId == Id).ToList();
                 if (booksRead != null)
                 {
                     foreach (var bookread in booksRead)
@@ -85,10 +86,17 @@ namespace BookList.Controllers
             return new HttpNotFoundResult();
         }
 
-        public ActionResult ReadBooksAdd()
+        public ActionResult ReadBooksAdd(int ReaderId)
         {
+            var brViewModel = new BRViewModel();
             using (var booksListContext = new BooksListContext())
             {
+                var reader = booksListContext.Readers.SingleOrDefault(p => p.ReaderId == ReaderId);
+                var readerViewModel = new ReaderViewModel()
+                {
+                    ReaderId = ReaderId
+                };
+                brViewModel.Readers = readerViewModel;
                 ViewBag.BooksRead = booksListContext.Books.Select(c => new SelectListItem
                 {
                     Value = c.BookId.ToString(),
@@ -96,7 +104,7 @@ namespace BookList.Controllers
                 }).ToList();
             }
 
-            var brViewModel = new BRViewModel();
+           
 
             return View("AddEditBooksRead", brViewModel);
         }
@@ -106,7 +114,8 @@ namespace BookList.Controllers
         {
             using (var booksListContext = new BooksListContext())
             {
-                var bookRead = new BooksRead
+               
+                    var bookRead = new BooksRead
                 {
                     ReaderId = brViewModel.Readers.ReaderId.Value,
                     BookId = brViewModel.Books.BookId.Value
@@ -116,7 +125,7 @@ namespace BookList.Controllers
                 booksListContext.SaveChanges();
             }
 
-            return RedirectToAction("Index");
+            return RedirectToAction("ReadersBookList", new { Id = brViewModel.Readers.ReaderId.Value });
         }
         
 
