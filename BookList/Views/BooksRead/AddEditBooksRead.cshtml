@@ -3,7 +3,7 @@
     ViewBag.Title = "AddBooksRead";
 }
 
-<h2>@Model.Readers.ReaderId</h2>
+<h2>@(Model.Readers.Name)</h2>
 
 
 <div class="row">
@@ -16,7 +16,7 @@
             @Html.DropDownListFor(m => m.Books.BookId, ViewBag.BooksRead as IEnumerable<SelectListItem>, new { @class = "form-control" })
         </div>
         <button type="submit" class="btn btn-primary">@("Add")</button>
-        @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default" })
+        @Html.ActionLink("Cancel", "ReadersBookList", new { Id = Model.Readers.ReaderId }, new { @class = "btn btn-default" })
        
 }
     </div>

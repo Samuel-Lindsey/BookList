@@ -94,7 +94,8 @@ namespace BookList.Controllers
                 var reader = booksListContext.Readers.SingleOrDefault(p => p.ReaderId == ReaderId);
                 var readerViewModel = new ReaderViewModel()
                 {
-                    ReaderId = ReaderId
+                    ReaderId = ReaderId,
+                    Name = reader.Name
                 };
                 brViewModel.Readers = readerViewModel;
                 ViewBag.BooksRead = booksListContext.Books.Select(c => new SelectListItem
