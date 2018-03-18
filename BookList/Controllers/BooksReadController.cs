@@ -95,8 +95,11 @@ namespace BookList.Controllers
                 var readerViewModel = new ReaderViewModel()
                 {
                     ReaderId = ReaderId,
-                    Name = reader.Name
+                    Name = reader.Name,
+                   
+
                 };
+
                 brViewModel.Readers = readerViewModel;
                 ViewBag.BooksRead = booksListContext.Books.Select(c => new SelectListItem
                 {
@@ -120,6 +123,7 @@ namespace BookList.Controllers
                 {
                     ReaderId = brViewModel.Readers.ReaderId.Value,
                     BookId = brViewModel.Books.BookId.Value
+                    
                 };
 
                 booksListContext.BooksRead.Add(bookRead);
@@ -128,7 +132,30 @@ namespace BookList.Controllers
 
             return RedirectToAction("ReadersBookList", new { Id = brViewModel.Readers.ReaderId.Value });
         }
-        
+
+        [HttpPost]
+        public ActionResult DeleteBookRead (BRViewModel brViewModel)
+        {
+            using (var booksListContext = new BooksListContext())
+            {
+          
+                var bookRead = booksListContext.BooksRead.SingleOrDefault(b => b.BRId == brViewModel.BRId);
+                
+
+                if (bookRead != null)
+                {
+
+                    booksListContext.BooksRead.Remove(bookRead);
+                    booksListContext.SaveChanges();
+
+                    return RedirectToAction("ReadersBookList", new { Id = bookRead.ReaderId });
+                   
+                }
+            }
+
+            return new HttpNotFoundResult();
+        }
+
 
     }
 }
