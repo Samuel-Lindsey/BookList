@@ -16,5 +16,23 @@ textarea {
     max-width: 280px;
 }
 
+.readers-name {
+    list-style: none;
+    text-decoration: none;
+}
+
+.readers-name a {
+    color: darkcyan;
+    font-size: medium;
+}
+
+/* Liabrary of Books*/
+
+.titles {
+    font-size: medium;
+}
+
+
+
 
 

@@ -101,7 +101,12 @@ namespace BookList.Controllers
                 };
 
                 brViewModel.Readers = readerViewModel;
-                ViewBag.BooksRead = booksListContext.Books.Select(c => new SelectListItem
+                var booksRead = booksListContext.BooksRead.Where(p => p.ReaderId == ReaderId).ToList();
+                var allbooks = booksListContext.Books.ToList();
+                var Result = allbooks.Where(item => !booksRead.Any(item2 => item2.BookId == item.BookId));
+
+                ViewBag.BooksRead = Result.Select(c => new SelectListItem
+                
                 {
                     Value = c.BookId.ToString(),
                     Text = c.Title

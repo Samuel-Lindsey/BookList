@@ -3,14 +3,14 @@
     ViewBag.Title = "Readers";
 }
 
-<h2>Index</h2>
+<h2>Select A Reader</h2>
 
-<ul>
+<ul class="readers-name">
     @for (var i = 0; i < Model.Readers.Count; i++)
     {
-        <li> @Model.Readers[i].Name
-             @Html.ActionLink("Books Read", "ReadersBookList", "BooksRead", new { Id = Model.Readers[i].ReaderId }, null)
-             </li>
+        <li > 
+            <a href= @Url.Action("ReadersBookList", "BooksRead", new { Id = Model.Readers[i].ReaderId }, null)><span>@Model.Readers[i].Name</span></a>
+        </li>
     }
 
 </ul>
