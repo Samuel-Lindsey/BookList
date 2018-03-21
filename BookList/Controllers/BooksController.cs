@@ -24,8 +24,8 @@ namespace BookList.Controllers
                     }).ToList()
                 };
 
-                
-         
+                booksList.TotalBooks = booksList.Books.Count;
+
                 return View(booksList);
             }
         }

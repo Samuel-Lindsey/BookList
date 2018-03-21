@@ -3,26 +3,34 @@
     ViewBag.Title = "AllBooks";
 }
 
-<h2>Books</h2>
+<h2>@(Model.TotalBooks) Books In Library</h2>
+<div>
+    @Html.ActionLink("Add Book", "BooksAdd", null, new { @class = "btn btn-primary" })
+</div>
 
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Title</th>
+            
             <th></th>
         </tr>
     </thead>
     <tbody>
         @for (var i = 0; i < Model.Books.Count; i++)
         {
-          <tr>
+          <tr class="col-md-6 col-sm-12">
             <td>
-                <div class="titles">
-                    @(Model.Books[i].Title + ": By " + Model.Books[i].Author)
-                </div>
-                        @Html.ActionLink("Edit", "BooksEdit", new { id = Model.Books[i].BookId })
+                <div class="aBook">
+                    <div class="titles">
+                        @(Model.Books[i].Title)
+                    </div>
+                    @("By " + Model.Books[i].Author)
+                    <div>
 
-                        <a data-toggle="modal" href="@("#deleteBookModal" + i)">Delete</a>
+                    </div>
+                    @Html.ActionLink("Edit", "BooksEdit", new { id = Model.Books[i].BookId })
+                    <a data-toggle="modal" href="@("#deleteBookModal" + i)">Delete</a>
+                </div>
                         <div class="modal fade" id="@("deleteBookModal" + i)" tabindex="-1" role="dialog">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -50,6 +58,5 @@
     </tbody>
 </table>
 
-<div class="col-sm-12">
-    @Html.ActionLink("Add Book", "BooksAdd", null, new { @class = "btn btn-primary" })
-</div>
+<h3 class="menu-title">Font-Tester one</h3>
+<h3>Font-Tester two</h3>
