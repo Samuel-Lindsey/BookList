@@ -30,17 +30,32 @@ textarea {
 /* Liabrary of Books*/
 
 .titles {
+    font-synthesis: weight;
+    font-weight: 800;
     font-size: medium;
+}
+
+.authors {
+    font-size:small;
+    font-weight:400;
 }
 
 footer {
     background-color: white;
 }
 
-.menu-title h3 {
-   
-    font-family: 'Times New Roman', Times, serif
+.amaticfont {
+    font-family: 'Amatic SC', cursive;
 }
 
+.codeProFont {
+    font-family: 'Source Code Pro', monospace;
+}
 
+.addbutton {
+    margin-top: 20px;
+}
 
+.menuTitle {
+    font-size:2em;
+}

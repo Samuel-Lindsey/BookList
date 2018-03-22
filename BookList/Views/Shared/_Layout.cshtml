@@ -4,10 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title class="menu-title">@ViewBag.Title - Book Tracker</title>
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Source+Code+Pro:200,400" rel="stylesheet" />
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <title class="amaticfont">@ViewBag.Title - Book Tracker</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Source+Code+Pro:200,400" rel="stylesheet">
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css">
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 
 </head>
@@ -20,10 +20,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Book Tracker", "Index", "Reader", new { area = "" }, new { @class = "navbar-brand menuTitle" })
+                @Html.ActionLink("Book Tracker", "Index", "Reader", new { area = "" }, new { @class = "navbar-brand amaticfont menuTitle" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav codeProFont">
                     <li>@Html.ActionLink("Readers", "Index", "Reader")</li>
                     <li>@Html.ActionLink("Library", "Index", "Books")</li>
                 </ul>
