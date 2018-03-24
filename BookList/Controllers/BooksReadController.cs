@@ -73,8 +73,10 @@ namespace BookList.Controllers
 
                         };
                         returnBookList.BooksRead.Add(brViewModel);
-                      
+                        returnBookList.TotalBR = booksRead.Count; 
+
                     }
+
 
                     return View(returnBookList);
 

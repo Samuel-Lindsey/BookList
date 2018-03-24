@@ -9,7 +9,7 @@
     @for (var i = 0; i < Model.Readers.Count; i++)
     {
         <li > 
-            <a href= @Url.Action("ReadersBookList", "BooksRead", new { Id = Model.Readers[i].ReaderId }, null)><span>@Model.Readers[i].Name</span></a>
+            <a href= @Url.Action("ReadersBookList", "BooksRead", new { Id = Model.Readers[i].ReaderId }, null)><h3>@Model.Readers[i].Name</h3></a>
         </li>
     }
 

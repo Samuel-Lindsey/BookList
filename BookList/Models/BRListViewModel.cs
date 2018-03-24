@@ -14,5 +14,6 @@ namespace BookList.Models
         }
         public List<BRViewModel> BooksRead { get; set; }
         public int ReaderId { get; set; }
+        public int TotalBR{ get; set; }
     }
 }

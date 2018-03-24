@@ -27,7 +27,10 @@ textarea {
     font-size: medium;
 }
 
+
+
 /* Liabrary of Books*/
+
 
 .titles {
     font-synthesis: weight;
@@ -54,8 +57,32 @@ footer {
 
 .addbutton {
     margin-top: 20px;
+    
 }
 
 .menuTitle {
     font-size:2em;
 }
+
+
+
+/*Over-ride of default bookstrap*/
+.greenbtn{
+    background-color:green;
+    border-color:red;
+}
+/*.greenbtn {
+    background-color: #468847;
+    border-color: #326533;
+}*/
+
+
+/* Readers Styles*/
+
+
+
+#open p {
+        background-color: red;
+        font-weight: bold;
+        font-size: 2em;
+    }
