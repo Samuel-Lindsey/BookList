@@ -67,14 +67,27 @@ footer {
 
 
 /*Over-ride of default bookstrap*/
-.greenbtn{
-    background-color:green;
-    border-color:red;
-}
-/*.greenbtn {
+.greenbtn {
     background-color: #468847;
     border-color: #326533;
-}*/
+}
+
+    .greenbtn:hover,
+    .greenbtn:focus,
+    .greenbtn:active {
+        background-color: #39713A;
+        border-color: #2F5B2F;
+    }
+
+.redlink,
+.redlink:hover {
+    color: #CF2C19;
+}
+
+.yellowlink,
+.yellowlink:hover {
+    color: #F5AA0C;
+}
 
 
 /* Readers Styles*/
@@ -82,7 +95,26 @@ footer {
 
 
 #open p {
-        background-color: red;
         font-weight: bold;
         font-size: 2em;
     }
+
+/*Home sytles*/
+
+.grad1 {
+    background: red;
+    background: -webkit-linear-gradient(left, orange , yellow, green, cyan, blue, violet);
+    background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+    background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+    background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#gradbg {
+    background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, orange, yellow, green, cyan, blue, violet); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, orange, yellow, green, cyan, blue, violet); /* Standard syntax (must be last) */
+}

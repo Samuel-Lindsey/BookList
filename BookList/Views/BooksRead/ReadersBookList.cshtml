@@ -2,15 +2,14 @@
 @{
     ViewBag.Title = "ReadersBookList";
 }
-<div class="col-sm-10">
-    <h2>@(Model.BooksRead[0].Readers.Name), you've read @(Model.TotalBR) books!</h2>
+<div class="row">
+    <div class="col-sm-10">
+        <h2>@(Model.BooksRead[0].Readers.Name), you've read @(Model.TotalBR) books!</h2>
+    </div>
+    <div class="col-sm-2">
+        @Html.ActionLink("Add Book", "ReadBooksAdd", new { ReaderId = Model.ReaderId }, new { @class = "btn btn-primary addbutton greenbtn" })
+    </div>
 </div>
-
-<div class="col-sm-2">
-    @Html.ActionLink("Add Book", "ReadBooksAdd", new { ReaderId = Model.ReaderId }, new { @class = "btn btn-primary addbutton" })
-
-</div>
-
 
 <table class="table table-striped">
     <thead>
@@ -21,7 +20,7 @@
     <tbody>
         @for (var i = 0; i < Model.BooksRead.Count; i++)
         {
-            <tr>
+            <tr class="col-md-6 col-sm-12">
                 <td>
                     <div class="titles">
                         @(Model.BooksRead[i].Books.Title)
@@ -48,7 +47,7 @@
                         Are you sure you want to delete @Model.BooksRead[i].Books.Title?
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Yes</button>
+                        <button type="submit" class="btn btn-primary greenbtn">Yes</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     </div>
 }
