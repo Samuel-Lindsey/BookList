@@ -26,7 +26,16 @@ namespace BookList.Migrations
                   new Books { BookId = 2, Title = "Grumpy Bird", Author = "Jeremy Tankard" },
                   new Books { BookId = 3, Title = "How Hippo Says Hello", Author = "Abigail Samoun" },
                   new Books { BookId = 4, Title ="GEM", Author = "Holly Hobbie" },
-                  new Books { BookId = 5, Title = "Happy", Author = "MeeToo"}
+                  new Books { BookId = 5, Title = "Happy", Author = "MeeToo"},
+                  new Books { BookId = 6, Title = "The Land of Nod", Author = "Robert L. Stevenson & Robert Hunter" },
+                  new Books { BookId = 7, Title = "Green Eggs and Ham", Author = "Dr. Seuss" },
+                  new Books { BookId = 8, Title = "Beekle", Author = "Dan Santat" },
+                  new Books { BookId = 9, Title = "Harold and the Purple Crayon", Author = "Crockett Johnson" },
+                  new Books { BookId = 10, Title = "The Storyteller", Author = "Evan Turk" },
+                  new Books { BookId = 11, Title = "After the Fall", Author = "Dan Santat" },
+                  new Books { BookId = 12, Title = "Itsy Bitsy Spider", Author = "Kate Toms" },
+                  new Books { BookId = 13, Title = "Dream Walkers", Author = "Adrienne Lindsey" },
+                  new Books { BookId = 14, Title = "The Worm", Author = "Elise Gravel" }
 
                 );
 

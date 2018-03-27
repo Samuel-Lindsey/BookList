@@ -37,6 +37,7 @@ namespace BookList.Controllers
             return View("AddEditBook", booksViewModel);
         }
 
+        // post changes to DB when see httpPost
         [HttpPost]
         public ActionResult AddBooks(BooksViewModel booksViewModel)
         {

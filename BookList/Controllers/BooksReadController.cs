@@ -9,39 +9,7 @@ namespace BookList.Controllers
 {
     public class BooksReadController : Controller
     {
-      /*  public ActionResult Index()
-        {
-            using (var booksListContext = new BooksListContext())
-            {
-                var brList = new BRListViewModel
-                {
-                    //Convert each BooksRead to a BooksReadViewModel
-                    BooksRead = booksListContext.BooksRead.Select(r => new BRViewModel
-                    {
-                        BRId = r.BRId,
-                    
-                        Books = new BooksViewModel
-                        {
-                            BookId = r.Books.BookId,
-                            Title = r.Books.Title,
-                            Author = r.Books.Author
-                        },
-
-                        Readers = new ReaderViewModel
-                        {
-                            ReaderId = r.Reader.ReaderId,
-                            Name = r.Reader.Name
-                        }
-                  
-                    }).ToList()
-                };
-
-               // brList.TotalBooks = brList.Books.Count;
-
-                return View(brList);
-            }
-        }
-*/
+      // creates Readers List using reader Id passed in 
         public ActionResult ReadersBookList(int Id)
         {
             var returnBookList = new BRListViewModel();
@@ -120,9 +88,11 @@ namespace BookList.Controllers
             return View("AddEditBooksRead", brViewModel);
         }
 
+        // httpost post to Datbase
         [HttpPost]
         public ActionResult AddReadBooks (BRViewModel brViewModel)
         {
+            // Test if dropdown selector is empty and returns to Readers Book list
             if (brViewModel.Books == null) return RedirectToAction("ReadersBookList", new { Id = brViewModel.Readers.ReaderId.Value });
             using (var booksListContext = new BooksListContext())
             {
