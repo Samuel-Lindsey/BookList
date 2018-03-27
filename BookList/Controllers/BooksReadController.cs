@@ -123,6 +123,7 @@ namespace BookList.Controllers
         [HttpPost]
         public ActionResult AddReadBooks (BRViewModel brViewModel)
         {
+            if (brViewModel.Books == null) return RedirectToAction("ReadersBookList", new { Id = brViewModel.Readers.ReaderId.Value });
             using (var booksListContext = new BooksListContext())
             {
                
