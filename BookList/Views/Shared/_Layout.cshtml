@@ -12,7 +12,7 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top navbg menutext">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -20,11 +20,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Book Tracker", "Index", "Reader", new { area = "" }, new { @class = "navbar-brand amaticfont menuTitle grad1" })
+                @Html.ActionLink("Book Tracker", "Index", "Home", new { area = "" }, new { @class = "navbar-brand amaticfont menuTitle grad1" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav codeProFont">
-                    <li>@Html.ActionLink("Readers", "Index", "Reader")</li>
+                    <li>@Html.ActionLink("Readers", "Index", "Reader", new { @class = "menutext" })</li>
                     <li>@Html.ActionLink("Library", "Index", "Books")</li>
                 </ul>
             </div>
